@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select 
 c.c_custkey,
 c.c_name,
@@ -6,6 +8,6 @@ c.c_acctbal,
 o.o_orderstatus,
 o.o_orderdate,
 o.o_totalprice
-from from {{ ref('stg_customers') }} c
+from {{ ref('stg_customers') }} c
 left join {{ ref('fct_sales') }} o
-on c.c_custkey=o.o_custkey
+on c.c_custkey = o.o_custkey
