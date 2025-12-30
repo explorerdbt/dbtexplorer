@@ -1,14 +1,6 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
+{{ config(materialized="table") }}
 
-select
-    id                as customer_id,
-    first_name,
-    last_name,
-    email,
-    country,
-    created_at        as customer_created_at
-from RAW_DB.RAW.customers
+with customer_tbl as (select * from SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER limit 100)
+
+select *
+from customer_tbl

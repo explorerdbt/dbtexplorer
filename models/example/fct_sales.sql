@@ -1,10 +1,6 @@
 select
-    o.order_id,
-    o.customer_id,
-    o.product_id,
-    o.order_date,
-    o.order_status,
-    o.quantity,
-    o.unit_price,
-    o.line_amount
+    o.o_custkey
+    o.o_orderstatus,
+    o.o_orderdate,
+    o.o_totalprice  
 from {{ ref('stg_orders') }} o
