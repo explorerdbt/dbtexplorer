@@ -6,11 +6,12 @@ select
     c.c_name,
     c.c_address,
     c.c_acctbal,
-    o.o_orderstatus,
+    {{normalize_status ('o_orderstatus')}} as order_status,
     o.o_orderdate,
     o.o_totalprice,
     s.region
 from {{ ref("stg_customers") }} c
 left join {{ ref("fct_sales") }} o on c.c_custkey = o.o_custkey
 left join {{ref('sales')}} s on o_orderstatus = s.status_code
-where o.o_custkey is not null
+left join {{ ref('example') }} e on c.c_custkey = o.o_custkey
+where o.o_custkey is not null and order_status = 'completed'
