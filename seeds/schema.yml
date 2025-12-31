@@ -1,0 +1,23 @@
+version: 2
+
+seeds:
+  - name: sales_data
+    description: "Sample sales transaction data"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: order_date
+        tests:
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+
+      - name: status_code
+        tests:
+          - accepted_values:
+              values: ['F', 'O', 'P']
