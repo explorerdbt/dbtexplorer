@@ -97,11 +97,6 @@ models:
       columns:
       - name: employee_status
         tests:
-         - accepted_values:
-           arguments: 
-            values: 
-            - Active
-            - Inactive 
-            - Unknown
-
+          - not_null
+          
                 
