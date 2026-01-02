@@ -20,7 +20,11 @@ seeds:
       - name: status_code
         tests:
           - accepted_values:
-              values: ['F', 'O', 'P']
+            arguments:
+              values: 
+              - F
+              - O
+              - P
   - name: employees
     columns:
       - name: employee_id
