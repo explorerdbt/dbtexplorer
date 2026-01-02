@@ -21,3 +21,12 @@ seeds:
         tests:
           - accepted_values:
               values: ['F', 'O', 'P']
+  - name: employees
+    columns:
+      - name: employee_id
+        tests: [not_null, unique]
+
+  - name: departments
+    columns:
+      - name: department_id
+        tests: [not_null, unique]

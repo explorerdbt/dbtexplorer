@@ -1,4 +1,3 @@
-
 version: 2
 
 models:
@@ -88,9 +87,22 @@ models:
       - name: c_comment
         data_type: varchar
         description: ""
-      tests:
-        - unique
-        - not_null
-        
+        tests: 
+           - unique
+           - not_null
 
-        
+    - name: stg_employees
+      columns:
+       - name: employee_id
+         tests: 
+           - unique
+           - not_null
+
+    - name: fct_employees
+      columns:
+      - name: employee_status
+        tests:
+         - accepted_values:
+            values: ['Active', 'Inactive', 'Unknown']
+
+                
