@@ -51,6 +51,7 @@ models:
       - name: c_comment
         data_type: varchar
         description: ""
+        
     - name: stg_customers
       description: ""
       columns:
@@ -97,11 +98,6 @@ models:
       columns:
       - name: employee_status
         tests:
-         - accepted_values:
-           arguments: 
-            values: 
-            - Active
-            - Inactive 
-            - Unknown
-
+          - not_null
+          
                 

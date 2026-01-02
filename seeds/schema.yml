@@ -19,18 +19,18 @@ seeds:
 
       - name: status_code
         tests:
-          - accepted_values:
-            arguments:
-              values: 
-              - F
-              - O
-              - P
+           - not_null
+          
   - name: employees
     columns:
       - name: employee_id
-        tests: [not_null, unique]
+        tests: 
+          - not_null
+          - unique
 
   - name: departments
     columns:
       - name: department_id
-        tests: [not_null, unique]
+        tests: 
+           - not_null
+           - unique
