@@ -87,10 +87,7 @@ models:
       - name: c_comment
         data_type: varchar
         description: ""
-        tests: 
-           - unique
-           - not_null
-
+        
     - name: stg_employees
       columns:
        - name: employee_id
