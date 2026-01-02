@@ -51,6 +51,7 @@ models:
       - name: c_comment
         data_type: varchar
         description: ""
+        
     - name: stg_customers
       description: ""
       columns:
