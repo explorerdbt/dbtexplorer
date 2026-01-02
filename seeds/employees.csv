@@ -1,0 +1,9 @@
+employee_id,employee_name,department_id,join_date,salary,status
+E001,Amit,D01,2023-01-10,60000,A
+E002,John,D02,2023-02-15,70000,A
+E003,Meera,D01,2023-03-20,65000,I
+E004,David,D03,2023-04-05,80000,A
+E011,Sumita,D02,2023-09-10,60000,A
+E012,Johny,D04,2023-03-16,70500,I
+E013,Mehana,D01,2023-07-20,62000,I
+E014,Daniel,D04,2023-05-30,40000,A

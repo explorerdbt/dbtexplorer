@@ -1,0 +1,108 @@
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: my_second_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+                
+    - name: my_third_dbt_model
+      description: ""
+      columns:
+      - name: c_custkey
+        data_type: number
+        description: ""
+
+      - name: c_name
+        data_type: varchar
+        description: ""
+
+      - name: c_address
+        data_type: varchar
+        description: ""
+
+      - name: c_nationkey
+        data_type: number
+        description: ""
+
+      - name: c_phone
+        data_type: varchar
+        description: ""
+
+      - name: c_acctbal
+        data_type: number
+        description: ""
+
+      - name: c_mktsegment
+        data_type: varchar
+        description: ""
+
+      - name: c_comment
+        data_type: varchar
+        description: ""
+    - name: stg_customers
+      description: ""
+      columns:
+      - name: c_custkey
+        data_type: number
+        description: ""
+
+      - name: c_name
+        data_type: varchar
+        description: ""
+
+      - name: c_address
+        data_type: varchar
+        description: ""
+
+      - name: c_nationkey
+        data_type: number
+        description: ""
+
+      - name: c_phone
+        data_type: varchar
+        description: ""
+
+      - name: c_acctbal
+        data_type: number
+        description: ""
+
+      - name: c_mktsegment
+        data_type: varchar
+        description: ""
+
+      - name: c_comment
+        data_type: varchar
+        description: ""
+        tests: 
+           - unique
+           - not_null
+
+    - name: stg_employees
+      columns:
+       - name: employee_id
+         tests: 
+           - unique
+           - not_null
+
+    - name: fct_employees
+      columns:
+      - name: employee_status
+        tests:
+         - accepted_values:
+            values: ['Active', 'Inactive', 'Unknown']
+
+                
